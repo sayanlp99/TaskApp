@@ -2,11 +2,11 @@ import React from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
-const Task= ({item}) => {
+const Task= ({item, deleteTask}) => {
     return(
         <TouchableOpacity style={styles.item}>
             <Text>{item.task}</Text>
-            <MaterialIcons onPress={()=>alert(item.id)} name="delete-outline" size={24} color="red" />
+            <MaterialIcons onPress={()=>deleteTask(item.id)} name="delete-outline" size={24} color="red" />
         </TouchableOpacity>
     )
 }
